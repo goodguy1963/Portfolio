@@ -2,7 +2,7 @@
 
 Static portfolio and case-study site for `goodguy1963.github.io/Portfolio/`.
 
-Featured cases: ProductBackground, Copilot Cockpit, ThinkingLLM, and [Comfy Rail](https://comfyrail.dev).
+Featured cases: ProductBackground, Copilot Cockpit, ThinkingLLM, [Comfy Rail](https://comfyrail.dev), and [3DOfficeAT](https://3doffice.at).
 
 ## Local preview
 
