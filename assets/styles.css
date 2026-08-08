@@ -547,6 +547,12 @@ a.reference-media:hover img { transform: scale(1.018); filter: brightness(1.06);
   .architecture { grid-template-columns: repeat(3, 1fr); }
 }
 
+@media (max-width: 960px) {
+  .case-hero { grid-template-columns: 1fr; }
+  .case-hero-copy { max-width: 760px; }
+  .case-media { justify-self: center; }
+}
+
 @media (max-width: 860px) {
   .section-rail { display: none; }
   html { scroll-padding-top: 84px; }
