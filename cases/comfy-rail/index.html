@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0c">
+  <meta name="description" content="Comfy Rail case study — maintained ComfyUI runtimes for RunPod Serverless, created by Marcel Hofer.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Comfy Rail — Marcel Hofer">
+  <meta property="og:description" content="Versioned generation, editing, and upscaling runtimes behind one stable API contract.">
+  <meta property="og:image" content="https://goodguy1963.github.io/Portfolio/assets/images/comfy-rail-social-preview.png">
+  <link rel="canonical" href="https://goodguy1963.github.io/Portfolio/cases/comfy-rail/">
+  <link rel="icon" type="image/png" href="../../assets/images/3doffice-mark-v2.png">
+  <link rel="stylesheet" href="../../assets/styles.css?v=17">
+  <script src="../../assets/main.js?v=2" defer></script>
+  <title>Comfy Rail — Marcel Hofer</title>
+</head>
+<body data-page="case-comfy-rail">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell" data-header>
+    <a class="brand" href="../../" aria-label="Marcel Hofer, home"><span class="brand-mark" aria-hidden="true"><img src="../../assets/images/3doffice-mark-transparent.svg" alt=""></span><span><strong>Marcel Hofer</strong><small>Personal Portfolio</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span>Menu</span><i aria-hidden="true"></i></button>
+    <nav id="primary-nav" class="site-nav" aria-label="Primary navigation"><a href="../../#work">Work</a><a href="../../#capabilities">Capabilities</a><a href="../../#profile">Profile</a><a href="../../#archive">Archive</a><a href="../../#contact">Contact</a></nav>
+    <div class="system-state"><span class="status-light" aria-hidden="true"></span><span><small>Case file</small><strong>04 / Comfy Rail</strong></span></div>
+  </header>
+
+  <main id="main" class="case-main">
+    <section class="case-hero shell">
+      <div class="case-hero-copy" data-reveal>
+        <p class="case-breadcrumb"><a href="../../#work">Selected work</a> / Case 04</p>
+        <h1>Comfy Rail</h1>
+        <p class="case-subtitle">Production ComfyUI runtime for RunPod Serverless</p>
+        <p class="case-summary">A maintained runtime system that turns approved ComfyUI workflows into versioned generation, editing, and upscaling services behind one stable API contract.</p>
+        <div class="case-actions"><a class="button button-primary" href="https://comfyrail.dev">Visit Comfy Rail <span aria-hidden="true">↗</span></a><a class="text-link" href="https://comfyrail.dev/production-readiness">Readiness guide <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <figure class="case-media" data-reveal><img src="../../assets/images/comfy-rail-social-preview.png" width="1200" height="630" alt="Comfy Rail runtime and API route diagram"></figure>
+    </section>
+
+    <dl class="case-facts shell" data-reveal>
+      <div><dt>Type</dt><dd>B2B AI runtime product</dd></div>
+      <div><dt>Focus</dt><dd>ComfyUI on RunPod Serverless</dd></div>
+      <div><dt>Role</dt><dd>Founder · Product and system design</dd></div>
+      <div><dt>Status</dt><dd>Public site · Controlled release gates</dd></div>
+    </dl>
+
+    <section id="story" class="case-story section shell">
+      <div class="story-grid">
+        <nav class="story-nav" aria-label="Case study sections"><a href="#problem">Problem <span>01</span></a><a href="#system">System <span>02</span></a><a href="#role">Role <span>03</span></a><a href="#evidence">Evidence <span>04</span></a></nav>
+        <div class="story-content">
+          <section id="problem" data-reveal>
+            <p class="eyebrow"><span>01</span> Problem</p>
+            <h2>A working ComfyUI graph is not yet a dependable production service.</h2>
+            <p>Production teams need repeatable versions, a stable request contract, predictable deployment boundaries, and evidence that the exact runtime has passed its release checks. A single mutable image makes generation, editing, and high-resolution output harder to maintain and reason about.</p>
+          </section>
+
+          <section id="system" data-reveal>
+            <p class="eyebrow"><span>02</span> System</p>
+            <h2>Three separately versioned runtimes, one public contract.</h2>
+            <p>Comfy Rail separates generation, editing/outpainting, and upscaling into maintained runtime profiles. Customers keep execution inside their own RunPod account while the product defines the compatible workflow path, API boundary, and controlled release evidence.</p>
+            <div class="architecture" aria-label="Comfy Rail architecture">
+              <div><span>01</span><strong>Approved workflow</strong></div><div><span>02</span><strong>Stable API Contract v1</strong></div><div><span>03</span><strong>Versioned runtime profile</strong></div><div><span>04</span><strong>Customer RunPod account</strong></div><div><span>05</span><strong>Validated output</strong></div>
+            </div>
+            <ul class="decision-list">
+              <li><span>01</span><div><strong>Separate runtime profiles</strong>Generation, editing, and upscaling can evolve and be released without turning one container into an opaque monolith.</div></li>
+              <li><span>02</span><div><strong>Customer-owned infrastructure</strong>Execution, storage, and infrastructure billing stay in the customer's RunPod account.</div></li>
+              <li><span>03</span><div><strong>Release gates fail closed</strong>A runtime is not presented as commercially cleared until its exact dependencies and release evidence pass the defined checks.</div></li>
+            </ul>
+          </section>
+
+          <section id="role" data-reveal>
+            <p class="eyebrow"><span>03</span> Role</p>
+            <h2>Product strategy, runtime architecture, and launch system.</h2>
+            <p>I shaped the product positioning, split the runtime architecture around real workflow responsibilities, built the contract and deployment path, and developed the public product experience. The public case deliberately leaves private implementation details and customer operations out.</p>
+          </section>
+
+          <section id="evidence" data-reveal>
+            <p class="eyebrow"><span>04</span> Evidence</p>
+            <h2>One maintained route for each production responsibility.</h2>
+            <p>The public product and readiness documentation are live. These project visuals show the three runtime profiles without exposing private repository or operational details.</p>
+            <div class="evidence-grid">
+              <figure><img src="../../assets/images/comfy-rail-runtime-generate.webp" alt="Comfy Rail generation runtime producing a dark architectural product scene" loading="lazy"><figcaption>Generate · production image workflow</figcaption></figure>
+              <figure><img src="../../assets/images/comfy-rail-runtime-edit.webp" alt="Comfy Rail editing runtime extending and refining an image" loading="lazy"><figcaption>Edit · outpainting and refinement</figcaption></figure>
+              <figure><img src="../../assets/images/comfy-rail-runtime-upscale.webp" alt="Comfy Rail upscaling runtime preparing a high-resolution output" loading="lazy"><figcaption>Upscale · high-resolution delivery</figcaption></figure>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-case shell" href="../../#work"><span><small>Return to overview</small><strong>Selected Work</strong></span><b aria-hidden="true">↗</b></a>
+  </main>
+  <footer class="site-footer shell"><p>© <span data-year>2026</span> Marcel Hofer</p><p class="footer-status"><span class="status-light"></span>Case file 04</p><a href="../../#work">All work ↑</a></footer>
+</body>
+</html>
