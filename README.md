@@ -15,3 +15,5 @@ python -m http.server 4173
 Then open `http://localhost:4173/`.
 
 The site intentionally has no build step, analytics, cookies, form backend, or runtime dependency.
+
+Pushes to `master` deploy automatically through the GitHub Pages workflow. A manual workflow dispatch remains available for recovery deployments.

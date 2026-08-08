@@ -9,7 +9,7 @@
   --line-soft: #242829;
   --text: #edf0ed;
   --muted: #929a97;
-  --dim: #69706e;
+  --dim: #7c8582;
   --cyan: #56c7f2;
   --cyan-soft: #183b48;
   --lime: #92d45c;
@@ -281,14 +281,14 @@ button { font: inherit; }
   letter-spacing: .28em;
 }
 .hero h1 strong { position: relative; z-index: 0; color: var(--text); font-size: .78em; font-weight: 500; }
-.hero h1 strong::after {
-  content: attr(data-label);
+.hero-handle-shadow {
   position: absolute;
   z-index: -1;
   inset: .075em auto auto .065em;
   color: transparent;
   -webkit-text-stroke: 1px #566061;
   opacity: .58;
+  pointer-events: none;
 }
 .role {
   margin: 30px 0 0;
