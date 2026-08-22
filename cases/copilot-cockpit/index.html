@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090b0c">
-  <meta name="description" content="Copilot Cockpit case study — a persistent AI workflow control layer for VS Code by Marcel Hofer.">
+  <meta name="description" content="Copilot Cockpit case study — a structured orchestration layer for GitHub Copilot, tasks, jobs, research, and human approval inside VS Code.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Copilot Cockpit — Marcel Hofer">
-  <meta property="og:description" content="Planning, review gates, scheduled work, and bounded agent execution inside VS Code.">
+  <meta property="og:description" content="Visible planning, approval gates, scheduled work, and bounded AI execution inside VS Code.">
   <meta property="og:image" content="https://goodguy1963.github.io/Portfolio/assets/images/copilot-cockpit-poster.webp">
   <meta property="og:url" content="https://goodguy1963.github.io/Portfolio/cases/copilot-cockpit/">
   <meta name="twitter:card" content="summary_large_image">
@@ -32,17 +32,17 @@
         <p class="case-breadcrumb"><a href="../../#work">Selected work</a> / Case 02</p>
         <h1>Copilot Cockpit</h1>
         <p class="case-subtitle">AI workflow control for VS Code</p>
-        <p class="case-summary">A persistent workspace for turning AI-assisted development from a stream of prompts into visible planning, bounded execution, and human-reviewed progress.</p>
-        <div class="case-actions"><a class="button button-primary" href="https://github.com/goodguy1963/Copilot-Cockpit">View on GitHub <span aria-hidden="true">↗</span></a><a class="text-link" href="#story">Read the case <span aria-hidden="true">↓</span></a></div>
+        <p class="case-summary">A structured orchestration layer on top of GitHub Copilot and native VS Code chat—turning prompt-driven work into visible planning, deliberate approval, bounded execution, and inspectable progress.</p>
+        <div class="case-actions"><a class="button button-primary" href="https://github.com/goodguy1963/Copilot-Cockpit">View on GitHub <span aria-hidden="true">↗</span></a><a class="text-link" href="https://youtu.be/yiJCmwmxEFc">Watch overview <span aria-hidden="true">↗</span></a><a class="text-link" href="#story">Read the case <span aria-hidden="true">↓</span></a></div>
       </div>
       <figure class="case-media" data-reveal><video data-autoplay muted loop playsinline preload="metadata" poster="../../assets/images/copilot-cockpit-poster.webp"><source src="../../assets/media/copilot-cockpit-demo.webm" type="video/webm"></video></figure>
     </section>
 
     <dl class="case-facts shell" data-reveal>
       <div><dt>Type</dt><dd>Public VS Code extension</dd></div>
-      <div><dt>Focus</dt><dd>AI workflow orchestration</dd></div>
-      <div><dt>Role</dt><dd>Product · UX · Architecture</dd></div>
-      <div><dt>Status</dt><dd>Open-source · Maintained</dd></div>
+      <div><dt>Focus</dt><dd>Controlled AI orchestration</dd></div>
+      <div><dt>Modes</dt><dd>Tasks · Jobs · Research</dd></div>
+      <div><dt>Releases</dt><dd>Stable · Edge</dd></div>
     </dl>
 
     <section id="story" class="case-story section shell">
@@ -58,14 +58,15 @@
           <section id="system" data-reveal>
             <p class="eyebrow"><span>02</span> System</p>
             <h2>A control plane inside the editor where the work already happens.</h2>
-            <p>Copilot Cockpit adds durable planning and execution surfaces to VS Code. Todo Cockpit holds discussion and approval state; Tasks represent focused runs; Jobs coordinate ordered steps and checkpoints; Research tracks measured improvement. Optional specialist agents can handle bounded slices without replacing human closeout.</p>
-            <div class="architecture" aria-label="Copilot Cockpit architecture">
-              <div><span>01</span><strong>VS Code extension host</strong></div><div><span>02</span><strong>TypeScript core</strong></div><div><span>03</span><strong>Webview interface</strong></div><div><span>04</span><strong>Workspace storage</strong></div><div><span>05</span><strong>Agent integrations</strong></div>
+            <p>Copilot Cockpit adds durable planning and execution surfaces to VS Code. The To-Do Cockpit captures and refines work before it is promoted to Ready. Tasks represent focused execution units, Jobs coordinate multi-step workflows, and Research runs benchmark-driven improvement loops. Scheduling, MCP tools, bundled skills, and optional agent support extend the same controlled operating model.</p>
+            <div class="architecture" aria-label="Copilot Cockpit operating flow">
+              <div><span>01</span><strong>Capture</strong></div><div><span>02</span><strong>Refine</strong></div><div><span>03</span><strong>Approve</strong></div><div><span>04</span><strong>Execute</strong></div><div><span>05</span><strong>Inspect</strong></div>
             </div>
             <ul class="decision-list">
               <li><span>01</span><div><strong>Approval first</strong>Planning artifacts stay separate from executable tasks until the user deliberately promotes them.</div></li>
               <li><span>02</span><div><strong>Different tools for different work</strong>Tasks, Jobs, and Research remain distinct because one prompt, an ordered workflow, and a benchmark loop have different control needs.</div></li>
-              <li><span>03</span><div><strong>Repo-local by design</strong>Configuration and working state remain attached to the workspace, keeping the operating context close to the code.</div></li>
+              <li><span>03</span><div><strong>Extensible, without hiding control</strong>MCP setup, repo-local skills, scheduling, and optional agents add capability while keeping work visible inside the editor.</div></li>
+              <li><span>04</span><div><strong>Stable and Edge channels</strong>A recommended stable VSIX supports normal use while an Edge release exposes the newest changes from the main branch.</div></li>
             </ul>
           </section>
 
@@ -78,8 +79,9 @@
           <section id="evidence" data-reveal>
             <p class="eyebrow"><span>04</span> Evidence</p>
             <h2>A working extension with a deliberately layered workflow.</h2>
-            <p>The public repository includes Todo Cockpit, Tasks, Jobs, Research, workspace settings, onboarding, scheduling, and optional integrations. The project documentation clearly separates stable workflow primitives from experimental features instead of presenting every idea as equally mature.</p>
+            <p>The public repository includes the To-Do Cockpit, Tasks, Jobs, Research, workspace settings, onboarding, scheduling, MCP configuration, bundled skills, and optional agent workflows. A concise video shows the extension in motion; the complete feature tour documents how the individual surfaces work together.</p>
             <figure class="evidence-media"><video data-autoplay muted loop playsinline preload="metadata" poster="../../assets/images/copilot-cockpit-poster.webp"><source src="../../assets/media/copilot-cockpit-demo.webm" type="video/webm"></video><figcaption>Actual Copilot Cockpit extension demo. Playback pauses outside the viewport and for reduced-motion preferences.</figcaption></figure>
+            <div class="case-actions"><a class="button button-primary" href="https://youtu.be/yiJCmwmxEFc">Watch the overview <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/goodguy1963/Copilot-Cockpit/blob/main/docs/feature-tour.md">Open feature tour <span aria-hidden="true">↗</span></a></div>
           </section>
         </div>
       </div>

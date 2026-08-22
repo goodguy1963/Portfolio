@@ -114,6 +114,75 @@ if (videos.length && "IntersectionObserver" in window) {
   videos.forEach((video) => videoObserver.observe(video));
 }
 
+const lightbox = document.querySelector("[data-lightbox]");
+const lightboxItems = [...document.querySelectorAll("[data-lightbox-item]")];
+if (lightbox instanceof HTMLDialogElement && lightboxItems.length) {
+  const lightboxImage = lightbox.querySelector("[data-lightbox-image]");
+  const lightboxCaption = lightbox.querySelector("[data-lightbox-caption]");
+  const lightboxCounter = lightbox.querySelector("[data-lightbox-counter]");
+  const previousButton = lightbox.querySelector("[data-lightbox-previous]");
+  const nextButton = lightbox.querySelector("[data-lightbox-next]");
+  const closeButton = lightbox.querySelector("[data-lightbox-close]");
+  let activeItems = [];
+  let activeIndex = 0;
+  let openingItem = null;
+
+  const renderLightboxItem = () => {
+    const item = activeItems[activeIndex];
+    if (!item || !lightboxImage || !lightboxCaption || !lightboxCounter) return;
+    lightboxImage.src = item.dataset.lightboxSrc || "";
+    lightboxImage.alt = item.dataset.lightboxAlt || "";
+    lightboxCaption.textContent = item.dataset.lightboxCaption || "";
+    lightboxCounter.textContent = `${activeIndex + 1} / ${activeItems.length}`;
+  };
+
+  const moveLightbox = (step) => {
+    activeIndex = (activeIndex + step + activeItems.length) % activeItems.length;
+    renderLightboxItem();
+  };
+
+  lightboxItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const group = item.dataset.lightboxGroup;
+      activeItems = lightboxItems.filter((candidate) => candidate.dataset.lightboxGroup === group);
+      activeIndex = activeItems.indexOf(item);
+      openingItem = item;
+      renderLightboxItem();
+      lightbox.showModal();
+    });
+    item.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      event.preventDefault();
+      item.click();
+    });
+  });
+
+  previousButton?.addEventListener("click", () => moveLightbox(-1));
+  nextButton?.addEventListener("click", () => moveLightbox(1));
+  closeButton?.addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      lightbox.close();
+      return;
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      moveLightbox(-1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      moveLightbox(1);
+    }
+  });
+  lightbox.addEventListener("close", () => {
+    if (openingItem?.isConnected) requestAnimationFrame(() => openingItem.focus());
+  });
+}
+
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
