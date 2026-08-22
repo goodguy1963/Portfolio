@@ -25,8 +25,8 @@
     }
   </script>
   <link rel="icon" type="image/png" href="assets/images/3doffice-mark-v2.png">
-  <link rel="stylesheet" href="assets/styles.css?v=41">
-  <script src="assets/main.js?v=6" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=42">
+  <script src="assets/main.js?v=7" defer></script>
   <title>Marcel Hofer — Technical Creative Generalist</title>
 </head>
 <body data-page="home">
@@ -190,13 +190,105 @@
         </div>
         <p>Useful products rarely stop at one discipline. I move between strategy, interfaces, code, workflows, and the physical prototype.</p>
       </header>
-      <div class="capability-grid">
-        <article data-reveal><span class="capability-number">01</span><h3>AI Workflow Engineering</h3><p>ComfyUI systems, model integration, inference pipelines, prompt tooling, and GPU deployment.</p></article>
-        <article data-reveal><span class="capability-number">02</span><h3>Full-Stack Product Building</h3><p>From product logic and UX to APIs, storage, payments, deployment, and operational tooling.</p></article>
-        <article data-reveal><span class="capability-number">03</span><h3>Developer Tooling</h3><p>Extensions and control surfaces that make AI-assisted work visible, reviewable, and repeatable.</p></article>
-        <article data-reveal><span class="capability-number">04</span><h3>3D Design</h3><p>CAD, visualization, design iteration, and production-aware modelling in Fusion 360.</p></article>
-        <article data-reveal><span class="capability-number">05</span><h3>Digital Fabrication</h3><p>FDM and resin printing, materials, slicer workflows, troubleshooting, and process refinement.</p></article>
-        <article data-reveal><span class="capability-number">06</span><h3>Hardware Prototyping</h3><p>Enclosures, component integration, electronics, PCB concepts, and functional prototypes.</p></article>
+      <p class="capability-instruction" data-reveal>Select a capability to inspect the working stack.</p>
+      <div class="capability-grid" data-capability-grid>
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">01</span>
+            <span class="capability-summary"><strong>AI Workflow Engineering</strong><span>ComfyUI systems, model integration, inference pipelines, prompt tooling, and GPU deployment.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>I build controlled image and language-model pipelines that move from experimentation into reviewable, repeatable production.</p></div>
+            <div class="capability-stack">
+              <section><h4>Core</h4><ul><li>Python</li><li>ComfyUI</li><li>PyTorch / Transformers</li><li>Hugging Face</li><li>RunPod</li><li>Docker</li></ul></section>
+              <section><h4>Familiar</h4><ul><li>llama.cpp / GGUF</li><li>Replicate</li><li>LoRA / ai-toolkit</li><li>FLUX.2</li><li>Z-Image Turbo</li><li>LTX 2.3</li><li>MiniMax H3</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="cases/ai-visual-systems/">AI Visual Systems <b aria-hidden="true">↗</b></a><a href="cases/thinkingllm/">ThinkingLLM <b aria-hidden="true">↗</b></a><a href="cases/comfy-rail/">Comfy Rail <b aria-hidden="true">↗</b></a></div></div>
+          </div>
+        </details>
+
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">02</span>
+            <span class="capability-summary"><strong>Full-Stack Product Building</strong><span>From product logic and UX to APIs, storage, payments, deployment, and operational tooling.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>I carry a product from interface and business logic through persistence, payments, deployment, diagnostics, and day-to-day operation.</p></div>
+            <div class="capability-stack capability-stack--three">
+              <section><h4>Core</h4><ul><li>TypeScript</li><li>JavaScript</li><li>HTML / CSS</li><li>SQL</li><li>Next.js</li><li>React</li><li>Node.js</li></ul></section>
+              <section><h4>Tools</h4><ul><li>Supabase</li><li>PostgreSQL</li><li>Prisma</li><li>Stripe</li><li>Authentication</li></ul></section>
+              <section><h4>Familiar</h4><ul><li>Sentry</li><li>GitHub Actions</li><li>Jest</li><li>Playwright</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="cases/productbackground/">ProductBackground <b aria-hidden="true">↗</b></a></div></div>
+          </div>
+        </details>
+
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">03</span>
+            <span class="capability-summary"><strong>Developer Tooling</strong><span>Extensions and control surfaces that make AI-assisted work visible, reviewable, and repeatable.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>I design tools around the real operating loop: capture work, make state visible, add review gates, and keep execution controllable.</p></div>
+            <div class="capability-stack">
+              <section><h4>Core</h4><ul><li>TypeScript</li><li>VS Code API</li><li>Webviews</li><li>MCP</li><li>SQLite / SQL.js</li></ul></section>
+              <section><h4>Tools & patterns</h4><ul><li>Zod</li><li>esbuild</li><li>Scheduling / Cron</li><li>Workspace persistence</li><li>Extension packaging</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="cases/copilot-cockpit/">Copilot Cockpit <b aria-hidden="true">↗</b></a></div></div>
+          </div>
+        </details>
+
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">04</span>
+            <span class="capability-summary"><strong>3D Design</strong><span>CAD, visualization, design iteration, and production-aware modelling in Fusion 360.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>Parametric CAD, mesh repair, visualization, and design decisions shaped by how the object will actually be produced.</p></div>
+            <div class="capability-stack">
+              <section><h4>Core</h4><ul><li>Fusion 360</li><li>Meshmixer</li><li>Parametric CAD</li><li>Production modelling</li></ul></section>
+              <section><h4>Familiar</h4><ul><li>Blender</li><li>Adobe Dimension</li><li>MeshLab</li><li>Mesh optimization</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="cases/3doffice/">3DOfficeAT <b aria-hidden="true">↗</b></a><a href="#archive">Project DAD <b aria-hidden="true">↓</b></a></div></div>
+          </div>
+        </details>
+
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">05</span>
+            <span class="capability-summary"><strong>Digital Fabrication</strong><span>FDM and resin printing, materials, slicer workflows, troubleshooting, and process refinement.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>I connect material choice, machine setup, slicing, maintenance, and design adaptation to make difficult prints repeatable.</p></div>
+            <div class="capability-stack capability-stack--three">
+              <section><h4>Core</h4><ul><li>FDM printing</li><li>Resin printing</li><li>Cura</li><li>PrusaSlicer</li><li>CHITUBOX</li></ul></section>
+              <section><h4>Materials</h4><ul><li>PLA</li><li>PETG</li><li>ASA</li><li>TPU</li><li>Standard resin</li><li>Strong resin</li></ul></section>
+              <section><h4>Familiar</h4><ul><li>Multi-material printing</li><li>Trotec laser</li><li>Printer maintenance</li><li>Process troubleshooting</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="cases/3doffice/">3DOfficeAT <b aria-hidden="true">↗</b></a><a href="#profile">MCI workshop work <b aria-hidden="true">↓</b></a></div></div>
+          </div>
+        </details>
+
+        <details class="capability-card" data-reveal>
+          <summary>
+            <span class="capability-number">06</span>
+            <span class="capability-summary"><strong>Hardware Prototyping</strong><span>Enclosures, component integration, electronics, PCB concepts, and functional prototypes.</span></span>
+            <span class="capability-toggle" aria-hidden="true"><span class="when-closed">Explore stack</span><span class="when-open">Close stack</span><b>+</b></span>
+          </summary>
+          <div class="capability-detail">
+            <div class="capability-focus"><span>Working focus</span><p>I bring electronics, mechanical packaging, and fabricated parts together early enough to expose real integration problems.</p></div>
+            <div class="capability-stack">
+              <section><h4>Core</h4><ul><li>Raspberry Pi CM4</li><li>Connector PCB</li><li>Enclosure integration</li><li>Soldering</li><li>Multimeter</li></ul></section>
+              <section><h4>Familiar</h4><ul><li>Robotics environments</li><li>Prototype diagnostics</li></ul></section>
+            </div>
+            <div class="capability-proof"><span>Applied in</span><div><a href="#archive">Project DAD <b aria-hidden="true">↓</b></a></div></div>
+          </div>
+        </details>
       </div>
     </section>
 

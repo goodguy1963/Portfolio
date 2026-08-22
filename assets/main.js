@@ -183,6 +183,26 @@ if (lightbox instanceof HTMLDialogElement && lightboxItems.length) {
   });
 }
 
+const capabilityCards = [...document.querySelectorAll(".capability-card")];
+if (capabilityCards.length) {
+  capabilityCards.forEach((card) => {
+    card.addEventListener("toggle", () => {
+      if (!card.open) return;
+      capabilityCards.forEach((otherCard) => {
+        if (otherCard !== card) otherCard.open = false;
+      });
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const openCard = capabilityCards.find((card) => card.open);
+    if (!openCard) return;
+    openCard.open = false;
+    openCard.querySelector("summary")?.focus();
+  });
+}
+
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
