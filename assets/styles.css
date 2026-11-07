@@ -541,6 +541,8 @@ button { font: inherit; }
 .story-content > section > p { max-width: 820px; margin: 26px 0 0; color: #aab1af; font-size: 17px; }
 .story-content > section > p a { color: var(--text); text-decoration-color: var(--cyan); text-underline-offset: 4px; }
 .story-content > section > p a:hover { color: var(--cyan); }
+.story-content h3 { max-width: 820px; margin: 48px 0 0; font: 500 clamp(25px, 2.6vw, 36px)/1.08 var(--display); text-transform: uppercase; }
+.story-content h3 + p { margin-top: 16px; }
 .decision-list { margin: 38px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .decision-list li { padding: 24px 0; display: grid; grid-template-columns: 42px 1fr; gap: 18px; border-bottom: 1px solid var(--line); color: var(--muted); }
 .decision-list span { color: var(--cyan); font: 9px/1.6 var(--mono); }

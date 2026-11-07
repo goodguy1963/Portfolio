@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090b0c">
-  <meta name="description" content="ThinkingLLM case study — local multimodal language-model nodes for ComfyUI, maintained by Marcel Hofer.">
+  <meta name="description" content="ThinkingLLM case study — local multimodal ComfyUI nodes with image and text decision routing across named workflow branches.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ThinkingLLM — Marcel Hofer">
-  <meta property="og:description" content="Thinking control, streaming, audio and vision workflows, and raw traces for local LLMs in ComfyUI.">
+  <meta property="og:description" content="Local multimodal ComfyUI nodes with image and text decision routing across named workflow branches.">
   <meta property="og:image" content="https://goodguy1963.github.io/Portfolio/assets/images/thinkingllm-ui.png">
   <meta property="og:url" content="https://goodguy1963.github.io/Portfolio/cases/thinkingllm/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://goodguy1963.github.io/Portfolio/cases/thinkingllm/">
   <link rel="icon" type="image/png" href="../../assets/images/3doffice-mark-v2.png">
-  <link rel="stylesheet" href="../../assets/styles.css?v=25">
+  <link rel="stylesheet" href="../../assets/styles.css?v=26">
   <script src="../../assets/main.js?v=6" defer></script>
   <title>ThinkingLLM — Marcel Hofer</title>
 </head>
@@ -59,6 +59,9 @@
             <p class="eyebrow"><span>02</span> System</p>
             <h2>Model guidance and runtime visibility built into the nodes.</h2>
             <p>ThinkingLLM wraps Qwen, Gemma, and Whisper workflows behind a cleaner family of ComfyUI nodes. The interface separates normal and advanced use, provides curated model guidance, and preserves both a cleaned response and the raw generation stream.</p>
+            <h3>Let a local model route the workflow.</h3>
+            <p>The Decision Router accepts an image or text input, matches it against named routes and their descriptions, then sends it down the selected ComfyUI branch. It supports Clef-Flash 9B, Clef 27B, and OpenJev 27B, and can expose typed Boolean and Integer outputs for downstream logic.</p>
+            <figure class="evidence-media"><video controls muted playsinline preload="none" poster="../../assets/images/thinkingllm-decision-router-poster.webp" aria-label="ThinkingLLM Decision Router matching an image to a named route"><source src="../../assets/media/thinkingllm-decision-router-demo.mp4" type="video/mp4">Your browser does not support embedded video.</video><figcaption>12-second ComfyUI capture: define named routes, then let the local decision model choose a branch. <a href="https://www.reddit.com/r/comfyui/comments/1xi2144/comment/19rsweohphutc/" target="_blank" rel="noreferrer">See the release discussion ↗</a></figcaption></figure>
             <div class="architecture" aria-label="ThinkingLLM architecture">
               <div><span>01</span><strong>ComfyUI node interface</strong></div><div><span>02</span><strong>Transformers / HF</strong></div><div><span>03</span><strong>GGUF / llama.cpp</strong></div><div><span>04</span><strong>Vision + audio inputs</strong></div><div><span>05</span><strong>Streaming + raw trace</strong></div>
             </div>
@@ -66,6 +69,7 @@
               <li><span>01</span><div><strong>Thinking is an explicit control</strong>Every language-model node exposes an enable/disable choice instead of making reasoning behavior an undocumented side effect.</div></li>
               <li><span>02</span><div><strong>Clean output and raw trace stay separate</strong>Downstream nodes receive the useful answer while developers can still inspect the original stream for debugging.</div></li>
               <li><span>03</span><div><strong>Capability labels stay honest</strong>Dedicated audio nodes and model guidance warn when a selected model is not known to support the connected input.</div></li>
+              <li><span>04</span><div><strong>Decision routing stays configurable</strong>Name each route and describe what belongs in it; image and text inputs can then select a workflow branch without a stack of conditional nodes.</div></li>
             </ul>
           </section>
 
